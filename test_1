@@ -1,0 +1,15 @@
+import random
+
+def main():
+    numb= int(input("Видите свое число(не больше 30):"))
+    i = random.randint(1, 10)
+    matrix = []
+    cum = []
+    for x in range(i):
+        matrix.append(random.randint(1, 30))
+    for u in range(0,len(matrix)):
+        if matrix[u] >= numb:
+            cum.append(matrix[u])
+    print (matrix, cum)
+
+main()
