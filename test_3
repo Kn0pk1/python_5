@@ -1,0 +1,10 @@
+def main():
+    name= input("Видите свои ФИО:")
+    name=name.title()
+    name= name.split(" ")
+    init = ""
+    for i in name:
+        init = init + i[0] + "."
+    print(init)
+
+main()
