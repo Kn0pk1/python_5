@@ -1,0 +1,38 @@
+import random
+
+
+def main():
+    matrix = []
+    for x in range(3):
+        matrix.append([])
+        for y in range(3):
+            matrix[x].append(random.randint(1, 9))
+    print (matrix)
+    result = LoShu(matrix)
+
+    print(result)
+    
+def LoShu(matrix):
+
+
+    row1 = matrix[0][0] + matrix[0][1] + matrix[0][2]
+    row2 = matrix[1][0] + matrix[1][1] + matrix[1][2]
+    row3 = matrix[2][0] + matrix[2][1] + matrix[2][2]
+
+    ver1 = matrix[0][0] + matrix[1][0] + matrix[2][0]
+    ver2 = matrix[0][1] + matrix[1][1] + matrix[2][1]
+    ver3 = matrix[0][2] + matrix[1][2] + matrix[2][2]
+
+    diag1 = matrix[0][0] + matrix[1][1] + matrix[2][2]
+    diag2 = matrix[0][2] + matrix[1][1] + matrix[2][0]
+
+    checkList = [row1,row2,row3,ver1,ver2,ver3,diag1,diag2]
+
+    temp = checkList[0]
+
+    for x in range (0, len(checkList)):
+        if checkList[x] != temp:
+            return ("не квадрат Ло Шу")
+            
+    return ("квадрат Ло Шу")
+main() 
