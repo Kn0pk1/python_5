@@ -1,0 +1,17 @@
+import random
+
+country_dlist = [{'capital': 'Moskow',
+  'name': 'Russia'},
+ {'capital': 'Talin',
+  'name': 'Estonia'}
+ ]
+
+tot_points = 0
+a = len(country_dlist)
+for i in range(a):
+    choice = random.choice(country_dlist)
+    que = country_dlist.remove(choice)
+    capital = input("Please enter the captial for country {}: ".format(choice['name']))
+    if capital.lower() == choice['capital'].lower():
+        tot_points += 1
+print ('You scored', tot_points)
